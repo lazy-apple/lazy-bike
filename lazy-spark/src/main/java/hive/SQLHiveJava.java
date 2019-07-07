@@ -1,6 +1,8 @@
 package hive;
 
 
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
 import java.io.Serializable;
@@ -12,6 +14,13 @@ public class SQLHiveJava {
 
     public static void main(String[] args) {
 
+
+        getDf("select * from mobike.logs");
+
+
+    }
+
+    public static Dataset<Row> getDf (String s){
         SparkSession spark = SparkSession
                 .builder()
                 .appName("Java Spark Hive Example")
@@ -19,11 +28,11 @@ public class SQLHiveJava {
                 .config("spark.sql.warehouse.dir","hdfs://mycluster/user/hive/warehouse")
                 .enableHiveSupport()
                 .getOrCreate();
+        Dataset<Row> df = null;
 
+        df = spark.sql(s);
+//        df.show();
 
-        spark.sql("show databases").show();
-        spark.sql("select count(*) from mob.lo").show();
-        spark.sql("select * from mobike.logs").show();
-
+        return df;
     }
 }
