@@ -9,17 +9,17 @@ import hive.SQLHiveJava
 object My_sql {
   def main(args: Array[String]): Unit = {
     val ds = SQLHiveJava.getDf("select * from mobike.logs")
-//    var df = ds.toDF();
-//    df.show();
+    var df = ds.toDF();
+    df.show();
 //
 //    df.createGlobalTempView("MoneyRecord");
-    ds.write
-      .format("jdbc")//com.mysql.cj.jdbc.Driver
-      .option("url", "jdbc:mysql://localhost:3306/bike")//jdbc:mysql://localhost:3306/houses
-      .option("dbtable", "moneyrecord2")
-      .option("user", "root")
-      .option("password", "root")
-      .save()
+//    ds.write
+//      .format("jdbc")//com.mysql.cj.jdbc.Driver
+//      .option("url", "jdbc:mysql://localhost:3306/bike")//jdbc:mysql://localhost:3306/houses
+//      .option("dbtable", "moneyrecord2")
+//      .option("user", "root")
+//      .option("password", "root")
+//      .save()
   }
 
 }
