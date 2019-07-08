@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/lazy-bike.iml" filepath="$PROJECT_DIR$/lazy-bike.iml" />
       <module fileurl="file://$PROJECT_DIR$/lazy-spark/lazy-spark.iml" filepath="$PROJECT_DIR$/lazy-spark/lazy-spark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wxBike/wxBike.iml" filepath="$PROJECT_DIR$/wxBike/wxBike.iml" />
     </modules>
   </component>
 </project>
